@@ -1,0 +1,170 @@
+/* reset declaration */
+*{
+    box-sizing: border-box;
+    margin: 0; /* <---- Remove all defalt margin (remove spacing between each content) */
+    padding: 0; /* <---- Remove padding of <ul> or <ol> (optional) */
+}
+h1,h2,h3,h4,h5,h6{ /* <---- Not that recommendable */
+    font-family: sans-serif;
+}
+p,a{
+    font-family: serif;
+}
+.header{
+    border: 4px solid red;
+    padding: 20px; /* <---- padding inside the box */
+}
+.header h1{
+    /* border: 2px dashed green; */
+    float: left; /* <---- only this, .header .sns and .header p are also floated automatically */
+}
+.header .sns{
+    /* border: 2px dashed purple; */ /* <---- In order to make it easier to design, just take advantage of border, then you can delete it*/
+    float: right;
+    margin-top: 1em; /* <---- follows 16px (フォントサイズ設定にem単位を使うと、ユーザー設定のオーバーライドに関する問題を回避しやすくなります。1emの大きさはブラウザーのfont-sizeのデフォルト値で決まります。開発者やユーザーが変更しなければ、1emは16pxです。要素に対するem単位の値は、その要素から継承したfont-sizeの計算値で決まります。つまり要素が継承するfont-sizeが25pxの場合、2emは50pxと算出されます。) */
+}
+.header .sns a{
+    border: 1px solid black;
+    display: block;
+    width: 100px;
+}
+.header p{
+    /* border: 2px dashed black; */
+    clear: both; /* <---- to prevent this from being floated without my will, use clear as a solution (used 'both' when being already used 'left' and 'right,' and 'left' when h1 uses 'left') */
+}
+
+.nav{
+    border: 4px solid red;
+    overflow: auto; /* <--- content is better than box, <ul>...<ul> (on html) (parents) should be overflowed */
+    padding: 20px;
+}
+
+.nav img{
+    border: 2px dashed green;
+    float: left;
+    display: none; /* <--- when you don't want to display image */
+}
+.nav ul{
+    border: 2px dashed purple;
+    float: right;
+}
+.nav ul li{
+    border: 1px solid black;
+    width: 100px; /* no support */
+    display: inline; /* <--- Remove nest as a way to change style (・) */
+}
+.section{
+    border: 4px solid red;
+    overflow: auto; /* <--- after 'float' is used the below, in order to see border, you can use 'overflow' */
+}
+.article{
+    border: 2px dashed blue;
+    height: 500px;
+    width: 70%; /* <--- 70% + 30% = 100% (you can fit both .article and .sidebar in one line, both are aligned side by side, occupying the entire space) */
+    float: left;
+    padding: 20px ;
+}
+.sidebar{
+    border: 2px dashed green;
+    height: 500px;
+    width: 30%;
+    float: left;
+    padding: 20px;
+}
+.footer{
+    border: 4px solid red;
+    /* text-align: center; <--- only text can move */
+    overflow: auto; /* <--- In order to see border */
+    padding: 10px 0;
+}
+.footer .logo{
+    /* border: 2px dashed yellow; */
+    float: left;
+    width: 33.33%; /* <--- 33.33% + 33.33% + 33.33% = about 100% (you can fit both .footer .logo, .footer p, and .footer .footer-sns in one line) */
+}
+.logo img{
+    width: 30px;
+    height: 30px;
+    margin: auto; /* <--- it doesn't work unless I display blcok */
+    display: block;
+}
+.footer p{
+    /* border: 2px dashed green; */
+    float: left;
+    width: 33.33%;
+    padding: 1em 0;
+}
+.footer .footer-sns{
+    /* border: 2px dashed black; */
+    float: left;
+    width: 33.33%;
+    padding: 1em 0;
+}
+.footer-sns a{
+    border: 1px dashed black;
+    width: 100px; /* <--- it doesn't work due to inline */
+    display: inline-block;
+}
+
+/* Position Properties
+        values:
+            static = default
+            relative = move from original position
+            fixed = move from body structure position and does not affect scrolling
+            absolute = move from body structure position
+
+        offest properties (movement)
+            left: 0;
+            top: 0; <---- horizontal
+            right: 0;
+            bottom: 0; <--- vertical
+*/
+
+.static{
+    border: 2px solid yellow;
+    width: 80px;
+    height: 80px;
+    position: static;
+    left: 100px; /* <--- it doesn't move (no support) */
+}
+.relative{
+    background-color: purple;
+    border: 2px solid purple;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 150px; /* <--- it moves from original position to left */
+    top: 50px;
+    z-index: 100;
+}
+.fixed{
+    background-color: green;
+    border: 2px solid green;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    z-index: 1;
+}
+.absolute{
+    background-color: blue;
+    border: 2px solid blue;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.relative-2{
+    background-color: gray;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    /* left: 0;  <--- if you want to move relative, you don't need to add this two
+    bottom: 0; */
+    z-index: 101;
+}

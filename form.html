@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="Assets/Styles/style.css">
+
+            <!-- Internal CSS -->
+            <style>
+                body{
+                    background-color: aqua;
+                }
+                label{
+                    color: red;
+                }
+                p{
+                    background-color: blue;
+                }
+            </style>
+
+
+
+
+
+</head>
+<body style="background-color: yellow;">
+    <!-- Form elements 
+            form = parent element
+            input
+            label <--- to make users to understand what to type by displaying letters next to the form
+            select
+            option
+            textarea
+            button
+
+            attributes (helper):
+                action <--- location of the form to be sent (URL)
+                method <--- how you send the date (post = for security reasons, making the date hidden in URL)
+                type <--- you can type anything as long as this is text (letters, numbers, symbols, etc.)
+                name <--- what you will type is your name
+                for <--- if you type display next to the form, automatically you can click inside the form
+                id <--- to assign a unique name to input, using this inside the 'for' (id = for)
+                placeholder <--- to help users to understand what you're supposed to type in the form by displaying letters inside the form
+                value <--- data
+                submit
+
+            validation:
+                required
+                maxlength
+                minlength
+                min
+                max
+    -->
+    <!-- Inline CSS -->
+    <form action="https://kredo.jp" method="get" style="background-color: gray;">
+            <label for="fullname">Full Name:</label>
+            <input type="text" name="fulltname" id="fullname" placeholder="Last Name First Name" required minlength="5" maxlength="20">
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="your_email@gmail.com">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="your password">
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" placeholder="above 18" min="18" max="60">
+
+            <label for="birthday">Birth Date:</label>
+            <input type="date" name="birthday" id="birthday">
+
+            <div>
+                <p>Choose your gender:</p>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">Male</label>
+
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">Female</label>
+
+                <input type="radio" name="gender" value="lgbt" id="lgbt">
+                <label for="lgbt">LGBT</label>
+            </div>
+
+            <div>
+                <p>Please choose your favorite food:</p>
+                <input type="checkbox" name="food" value="ramen" id="ramen">
+                <label for="ramen">Ramen</label>
+
+                <input type="checkbox" name="food" value="sushi" id="sushi">
+                <label for="sushi">Sushi</label>
+
+                <input type="checkbox" name="food" value="curry" id="curry">
+                <label for="curry">Curry</label>
+            </div>
+
+            <div>
+                <label for="device">What is your device?</label>
+                <select name="device" id="device">
+                    <option value="none"></option>
+                    <option value="macbook">MacBook</option>
+                    <option value="ipad">iPad</option>
+                    <option value="smartphone">Smartphone</option>
+                </select>
+            </div>
+
+            <label for="comment">Comments:</label>
+            <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Type your comments here."></textarea>
+
+            <hr>
+            <!-- buttons -->
+            <input type="submit" name="submit" value="ok">
+            <button type="submit" name="send">send</button>
+            <input type="image" src="Assets/Images/gar.jpg" width="80px" height="50px" name="submit">
+    </form>
+</body>
+</html>
